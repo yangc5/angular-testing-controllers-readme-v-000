@@ -11,6 +11,13 @@ module.exports = function (config) {
             'js/app/**/*.js',
             'tests/*.spec.js'
         ],
+
+       plugins: [
+            require("karma-jasmine"),
+            require("karma-spec-reporter"),
+            require("karma-phantomjs-launcher")
+        ],
+
         exclude: [],
         preprocessors: {},
         reporters: ['spec'],
@@ -18,7 +25,7 @@ module.exports = function (config) {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
         singleRun: true,
         concurrency: Infinity
     })
